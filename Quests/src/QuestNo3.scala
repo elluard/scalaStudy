@@ -17,17 +17,17 @@ object QuestNo3 {
 
     def main(args : Array[String]) : Unit = {
         var inputValue = ""
-        while( this.isContinue(inputValue) ) {
+        do{
             print("입력하세요 : ")
             inputValue = scala.io.StdIn.readLine()
             println(s"입력값은 $inputValue")
 
-            if(dictionary.contains(inputValue)) {
+            if(dictionary contains inputValue ) {
                 printMeans(inputValue)
             }
             else {
                 inputMeans(inputValue)
             }
-        }
+        }while( this.isContinue(inputValue) )
     }
 }

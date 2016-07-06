@@ -2,27 +2,31 @@
   * Created by leehwangchun on 2016. 7. 6..
   */
 class Animal2 {
-    def Move() : Unit ={ println("Animal Move!") }
+    val Name = "Animal"
+    def Move() : Unit ={ println(Name + " Animal Move!") }
 }
 
 trait Tiger extends Animal2 {
+    override val Name = "Tiger"
     override def Move() : Unit = {
         super.Move()
-        println("Tiger Move")
+        println(Name + " Tiger Move")
     }
 }
 
 trait Lion extends Animal2 {
+    override val Name = "Lion"
     override def Move() : Unit = {
         super.Move()
-        println("Lion Move")
+        println(Name + " Lion Move")
     }
 }
 
-class Liger extends Animal2 with Tiger with Lion {
+class Liger extends Tiger with Lion {
+    override val Name = "Liger"
     override def Move() : Unit = {
         super.Move()
-        println("Liger Move")
+        println(Name + " Liger Move")
     }
 }
 
